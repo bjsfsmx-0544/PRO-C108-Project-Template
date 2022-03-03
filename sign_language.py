@@ -6,8 +6,8 @@ hands = mp_hands.Hands()
 mp_draw = mp.solutions.drawing_utils
 cap = cv2.VideoCapture(0)
 
-finger_tips =[8, 12, 16, 20]
-thumb_tip= 4
+finger_tips = [8, 12, 16, 20]
+thumb_tip = 4
 
 while True:
     ret,img = cap.read()
@@ -18,12 +18,12 @@ while True:
 
     if results.multi_hand_landmarks:
         for hand_landmark in results.multi_hand_landmarks:
-            #accessing the landmarks by their position
+            # Acceder a los puntos de referencia por su posición
             lm_list=[]
             for id ,lm in enumerate(hand_landmark.landmark):
                 lm_list.append(lm)
 
-             #Code goes here   
+             # El código va aquí  
 
 
 
@@ -32,5 +32,5 @@ while True:
             mp_draw.DrawingSpec((0,255,0),4,2))
     
 
-    cv2.imshow("hand tracking", img)
+    cv2.imshow("Rastreo de manos", img)
     cv2.waitKey(1)
